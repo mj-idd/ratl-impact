@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أثر الحلقة القرآنية — جمعية رتّل بنجران</title>
+<meta name="description" content="لوحة نتائج استبانة قياس الأثر القيمي للحلقة القرآنية: 181 رداً، مقارنة قيم الطلاب والطالبات قبل الالتحاق وبعده.">
+<link rel="icon" id="fav">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap">
+<style>
+/* تخطيط: عمود واحد، بطاقات على أرضية رملية، ومخططات دَمبل أفقية لمقارنة قبل/بعد */
+:root{
+  color-scheme:light;
+  --bg:#FBF7EF; --surface:#FFFFFF; --surface-2:#FDFBF6; --surface-3:#F7F0E1;
+  --ink:#2A2118; --ink-2:#4E4336; --muted:#7A6E5C; --line:#EBE1CD; --line-2:#DCCDAF;
+  --gold:#9A7428; --gold-2:#C2A368; --gold-soft:#F8EFDC;
+  --before:#0B7C9C; --after:#B5801C;
+  --boys:#1F6F8B; --girls:#9A5B86; --good:#2E6A4E;
+  --display:"Amiri","Times New Roman",serif;
+  --body:"Tajawal",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:16px; --shadow:0 1px 2px rgba(122,95,40,.06), 0 10px 28px -20px rgba(122,95,40,.4);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg); color:var(--ink); font-family:var(--body);
+  font-size:16px; line-height:1.7; -webkit-text-size-adjust:100%}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--display); font-weight:700; margin:0; line-height:1.3; text-wrap:balance}
+.wrap{max-width:1000px; margin-inline:auto; padding-inline:16px; padding-block:0 56px}
+
+.hero{text-align:center; padding-block:34px 4px}
+.hero img{width:112px; height:auto; display:block; margin-inline:auto}
+.hero h1{font-size:clamp(1.5rem,5.4vw,2.3rem); margin-top:16px; letter-spacing:-.015em}
+.hero .org{color:var(--gold); font-size:.95rem; margin-top:9px; font-weight:500}
+.hero .sub{color:var(--muted); font-size:.9rem; margin-top:2px}
+.rule{height:1px; background:linear-gradient(90deg,transparent,var(--gold-2),transparent);
+  margin:22px auto 0; max-width:380px}
+
+/* ===== مبدّل الفئة ===== */
+.switch{display:flex; gap:6px; justify-content:center; margin-top:24px; flex-wrap:wrap}
+.switch button{font:inherit; font-family:var(--display); font-size:1rem; font-weight:700;
+  padding:9px 24px; border-radius:99px; cursor:pointer; border:1px solid var(--line-2);
+  background:var(--surface); color:var(--muted); transition:background .14s,color .14s,border-color .14s}
+.switch button:hover{color:var(--ink); border-color:var(--gold-2)}
+.switch button[aria-pressed="true"]{background:var(--gold); border-color:var(--gold); color:#fff}
+.switch button:focus-visible{outline:2px solid var(--gold-2); outline-offset:2px}
+
+.headline{margin-top:18px; background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r); box-shadow:var(--shadow); padding:26px 24px; text-align:center}
+.headline .big{font-family:var(--display); font-weight:700; line-height:1; direction:ltr;
+  font-size:clamp(3.2rem,13vw,5.2rem); color:var(--gold); font-variant-numeric:tabular-nums;
+  letter-spacing:-.03em}
+.headline .big sup{font-size:.34em; vertical-align:super; margin-left:3px; font-weight:600}
+.headline .cap{font-family:var(--display); font-size:1.12rem; font-weight:700; margin-top:10px; color:var(--ink)}
+.headline .exp{color:var(--muted); font-size:.9rem; margin-top:8px; max-width:48ch; margin-inline:auto}
+.movebar{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:20px; flex-wrap:wrap}
+.pin{display:flex; align-items:center; gap:7px; font-size:.88rem; color:var(--muted)}
+.pin b{font-family:var(--display); font-size:1.4rem; color:var(--ink);
+  font-variant-numeric:tabular-nums; font-weight:700}
+.dot{width:11px; height:11px; border-radius:50%; flex:none; box-shadow:0 0 0 2px var(--surface)}
+.dot.b{background:var(--before)} .dot.a{background:var(--after)}
+.dot.bo{background:var(--boys)} .dot.gi{background:var(--girls)}
+.arrow{color:var(--gold-2); font-size:1.2rem; line-height:1}
+
+.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:11px; margin-top:12px}
+@media (max-width:620px){ .stats{grid-template-columns:1fr 1fr} }
+.stat{background:var(--surface); border:1px solid var(--line); border-radius:13px; padding:15px 14px}
+.stat b{display:block; font-family:var(--display); font-size:1.85rem; color:var(--gold);
+  font-variant-numeric:tabular-nums; line-height:1.15; font-weight:700}
+.stat span{display:block; font-size:.81rem; color:var(--muted); margin-top:3px; line-height:1.5}
+
+section{margin-top:34px}
+.sec-head{display:flex; align-items:baseline; gap:11px; margin-bottom:5px; flex-wrap:wrap}
+.sec-head h2{font-size:1.18rem}
+.sec-head .tag{font-size:.78rem; color:var(--muted); background:var(--surface-3);
+  border:1px solid var(--line); border-radius:99px; padding:2px 10px}
+.sec-note{color:var(--muted); font-size:.88rem; margin:0 0 14px}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  box-shadow:var(--shadow); padding:20px 20px 16px}
+@media (max-width:520px){ .card{padding:16px 14px 12px} }
+
+.legend{display:flex; gap:18px; align-items:center; flex-wrap:wrap; margin-bottom:16px;
+  padding-bottom:13px; border-bottom:1px solid var(--line)}
+.legend .li{display:flex; align-items:center; gap:7px; font-size:.86rem; color:var(--ink-2)}
+.legend .scale{margin-inline-start:auto; font-size:.78rem; color:var(--muted)}
+
+.row{padding:11px 0; border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:none}
+.row.axisrow{padding:13px 0}
+.rtop{display:flex; align-items:baseline; gap:10px; margin-bottom:8px}
+.rtop .nm{flex:1; min-width:0; font-size:.93rem; color:var(--ink)}
+.row.axisrow .rtop .nm{font-family:var(--display); font-weight:700; font-size:1.05rem}
+.rtop .dl{font-size:.8rem; font-weight:500; color:var(--good); white-space:nowrap;
+  font-variant-numeric:tabular-nums; direction:ltr; unicode-bidi:isolate}
+.plot{position:relative; direction:ltr; height:36px; margin-inline:6px; padding-top:9px}
+.track{position:absolute; inset-inline:0; top:21px; height:2px; background:var(--line-2); border-radius:2px}
+.seg{position:absolute; top:20.5px; height:3px; background:var(--gold-2); opacity:.55; border-radius:3px}
+.mk{position:absolute; top:15px; width:13px; height:13px; border-radius:50%; margin-left:-6.5px;
+  box-shadow:0 0 0 2px var(--surface)}
+.mk.b{background:var(--before)} .mk.a{background:var(--after)}
+.mk.bo{background:var(--boys)} .mk.gi{background:var(--girls)}
+.vlab{position:absolute; top:0px; font-size:.72rem; color:var(--muted);
+  font-variant-numeric:tabular-nums; transform:translateX(-50%); white-space:nowrap}
+.axisline{position:relative; direction:ltr; height:18px; margin:4px 6px 0; border-top:1px dashed var(--line)}
+.axisline span{position:absolute; top:3px; font-size:.72rem; color:var(--muted);
+  transform:translateX(-50%); white-space:nowrap}
+.grp{font-family:var(--display); font-size:.95rem; color:var(--gold); font-weight:700;
+  margin:20px 0 4px; display:flex; align-items:center; gap:9px}
+.grp:first-child{margin-top:0}
+.grp i{flex:1; height:1px; background:var(--line); font-style:normal}
+
+.pbar{display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--line)}
+.pbar:last-child{border-bottom:none}
+.pbar .nm{flex:1 1 46%; min-width:0; font-size:.9rem}
+.pbar .t{flex:1 1 38%; min-width:60px; height:9px; background:var(--surface-3);
+  border:1px solid var(--line); border-radius:99px; overflow:hidden}
+.pbar .t i{display:block; height:100%; border-radius:99px; background:var(--gold)}
+.pbar.q .t i{background:var(--good)}
+.pbar b{flex:none; width:44px; text-align:start; font-size:.84rem; font-weight:600;
+  font-variant-numeric:tabular-nums; color:var(--ink)}
+@media (max-width:520px){
+  .pbar{flex-wrap:wrap; gap:7px 10px}
+  .pbar .nm{flex:1 1 100%}
+  .pbar .t{flex:1 1 auto}
+}
+.twobar{display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--line)}
+.twobar:last-child{border-bottom:none}
+.twobar .nm{flex:1 1 38%; min-width:0; font-size:.9rem}
+.twobar .tracks{flex:1 1 58%; min-width:0; display:grid; gap:5px}
+.trk{display:flex; align-items:center; gap:7px}
+.trk em{font-style:normal; font-size:.72rem; color:var(--muted); width:30px; flex:none}
+.trk .t{flex:1; height:9px; background:var(--surface-3); border:1px solid var(--line);
+  border-radius:99px; overflow:hidden; min-width:0}
+.trk .t i{display:block; height:100%; border-radius:99px}
+.trk.bo .t i{background:var(--boys)} .trk.gi .t i{background:var(--girls)}
+.trk b{font-size:.76rem; width:40px; flex:none; text-align:start;
+  font-variant-numeric:tabular-nums; font-weight:500}
+@media (max-width:520px){ .twobar{flex-wrap:wrap} .twobar .nm{flex:1 1 100%} }
+
+.quotes{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media (max-width:700px){ .quotes{grid-template-columns:1fr} }
+.q{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+  box-shadow:var(--shadow); position:relative}
+.q p{margin:0; font-size:.93rem; color:var(--ink-2); line-height:1.75}
+.q small{display:block; margin-top:9px; font-size:.78rem; color:var(--gold); font-weight:500}
+.q::before{content:"❞"; position:absolute; inset-inline-start:14px; top:6px; font-size:1.5rem;
+  color:var(--gold-2); opacity:.3; line-height:1}
+
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chip{background:var(--surface-3); border:1px solid var(--line); border-radius:99px;
+  padding:6px 14px; font-size:.87rem; color:var(--ink-2)}
+.chip b{color:var(--gold); font-weight:600; font-variant-numeric:tabular-nums}
+.take{display:grid; gap:11px}
+.take div{display:flex; gap:11px; align-items:flex-start; font-size:.94rem; color:var(--ink-2)}
+.take i{flex:none; width:7px; height:7px; border-radius:50%; background:var(--gold); margin-top:9px; font-style:normal}
+
+.tbtn{font:inherit; font-size:.82rem; padding:6px 15px; border-radius:99px; cursor:pointer;
+  border:1px solid var(--line-2); background:var(--surface); color:var(--muted); margin-top:14px}
+.tbtn:hover{color:var(--ink); border-color:var(--gold-2)}
+.tw{overflow-x:auto; margin-top:12px}
+table{border-collapse:collapse; width:100%; font-size:.84rem; min-width:420px}
+th,td{text-align:start; padding:7px 10px; border-bottom:1px solid var(--line)}
+th{font-weight:600; color:var(--muted); font-size:.78rem; white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap; direction:ltr; unicode-bidi:isolate}
+
+#tip{position:fixed; z-index:50; pointer-events:none; background:var(--ink); color:var(--bg);
+  padding:7px 11px; border-radius:9px; font-size:.8rem; line-height:1.6; max-width:260px;
+  box-shadow:0 8px 24px -8px rgba(0,0,0,.5); opacity:0; transition:opacity .12s}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important; animation:none!important} }
+.foot{margin-top:40px; padding-top:18px; border-top:1px solid var(--line); text-align:center;
+  color:var(--muted); font-size:.8rem}
+.foot a{color:var(--gold); text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <img id="logo" src="data:image/png;base64,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" alt="جمعية رتّل لتحفيظ القرآن الكريم بنجران">
+  <h1>أثر الحلقة القرآنية في قيم الطلاب</h1>
+  <p class="org">جمعية رتّل لتحفيظ القرآن الكريم بمنطقة نجران</p>
+  <p class="sub">نتائج استبانة قياس الأثر القيمي — ١٨١ رداً من أولياء الأمور والمعلمين</p>
+  <div class="rule"></div>
+</header>
+
+<div class="switch" role="group" aria-label="اختيار الفئة">
+  <button type="button" data-k="all" aria-pressed="true">الكل</button>
+  <button type="button" data-k="boys" aria-pressed="false">بنين</button>
+  <button type="button" data-k="girls" aria-pressed="false">بنات</button>
+</div>
+
+<div class="headline">
+  <div class="big" id="bigNum">+8.0<sup>%</sup></div>
+  <p class="cap" id="bigCap">ارتفاع في المتوسط العام للقيم بعد الالتحاق بالحلقة</p>
+  <div class="movebar">
+    <span class="pin"><i class="dot b"></i> قبل الالتحاق <b id="pinB">2.66</b></span>
+    <span class="arrow">←</span>
+    <span class="pin"><i class="dot a"></i> بعد الالتحاق <b id="pinA">2.87</b></span>
+  </div>
+  <p class="exp">المقياس من ٣ درجات: ضعيف ١، متوسط ٢، جيد ٣. والمتوسط محسوب على خمس عشرة
+  عبارة في خمسة محاور.</p>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<section>
+  <div class="sec-head"><h2>المحاور الخمسة</h2><span class="tag">متوسط كل محور من ٣</span></div>
+  <p class="sec-note" id="axNote"></p>
+  <div class="card">
+    <div class="legend">
+      <span class="li"><i class="dot b"></i> قبل الالتحاق</span>
+      <span class="li"><i class="dot a"></i> بعد الالتحاق</span>
+      <span class="scale">المقياس من ١ (ضعيف) إلى ٣ (جيد)</span>
+    </div>
+    <div id="axesPlot"></div>
+    <button class="tbtn" type="button" data-t="axesTable">عرض الأرقام جدولاً</button>
+    <div class="tw" id="axesTable" hidden></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>مقارنة البنين والبنات</h2><span class="tag">متوسط ما بعد الالتحاق</span></div>
+  <p class="sec-note">النتيجة متقاربة بين الفئتين في عمومها، والفروق الظاهرة محصورة في محورَي
+  الصلاة والانضباط.</p>
+  <div class="card">
+    <div class="legend">
+      <span class="li"><i class="dot bo"></i> بنين (٦٦)</span>
+      <span class="li"><i class="dot gi"></i> بنات (١١٥)</span>
+      <span class="scale">المقياس من ١ إلى ٣</span>
+    </div>
+    <div id="cmpPlot"></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>العبارات الخمس عشرة</h2><span class="tag">مرتَّبة حسب المحور</span></div>
+  <p class="sec-note" id="itNote"></p>
+  <div class="card">
+    <div class="legend">
+      <span class="li"><i class="dot b"></i> قبل الالتحاق</span>
+      <span class="li"><i class="dot a"></i> بعد الالتحاق</span>
+      <span class="scale">المقياس من ١ (ضعيف) إلى ٣ (جيد)</span>
+    </div>
+    <div id="itemsPlot"></div>
+    <button class="tbtn" type="button" data-t="itemsTable">عرض الأرقام جدولاً</button>
+    <div class="tw" id="itemsTable" hidden></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>الأسئلة العامة</h2><span class="tag">نسبة من أجاب بـ «نعم»</span></div>
+  <div class="card"><div id="genPlot"></div></div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>ما يَحُدّ من الأثر</h2><span class="tag">نسبة الموافقة على كل سبب</span></div>
+  <p class="sec-note" id="rsNote"></p>
+  <div class="card"><div id="reasonsPlot"></div></div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>شواهد من المشاركين</h2></div>
+  <div class="quotes" id="quotes"></div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>أبرز المقترحات</h2></div>
+  <div class="card"><div class="chips" id="asks"></div></div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>خلاصة القراءة</h2></div>
+  <div class="card"><div class="take" id="take"></div></div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>عيّنة الاستبانة</h2></div>
+  <div class="card"><div class="chips" id="sample"></div></div>
+</section>
+
+<p class="foot">جمعية رتّل لتحفيظ القرآن الكريم بمنطقة نجران · شهادة تسجيل رقم 3609 ·
+الشؤون التعليمية<br>
+<a href="https://www.qurannajran.org.sa" target="_blank" rel="noopener">www.qurannajran.org.sa</a></p>
+</div>
+
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+document.getElementById("fav").href = document.getElementById("logo").src;
+const D = {"all": {"n": 181, "items": [{"a": "الصلاة والتعبّد", "t": "المحافظة على الصلوات الخمس في أوقاتها", "b": 2.613, "f": 2.812}, {"a": "الصلاة والتعبّد", "t": "المبادرة إلى الصلاة دون تنبيه من أحد", "b": 2.448, "f": 2.74}, {"a": "الصلاة والتعبّد", "t": "المحافظة على الورد اليومي من القرآن والأذكار", "b": 2.21, "f": 2.691}, {"a": "برّ الوالدين وصلة الرحم", "t": "برّ الوالدين وطاعتهما في المعروف", "b": 2.779, "f": 2.912}, {"a": "برّ الوالدين وصلة الرحم", "t": "لين الحديث معهما وترك رفع الصوت والجدال", "b": 2.669, "f": 2.867}, {"a": "برّ الوالدين وصلة الرحم", "t": "الإحسان إلى الإخوة والأخوات وصلة الأرحام", "b": 2.685, "f": 2.862}, {"a": "الصدق والأمانة", "t": "الصدق في القول وترك الكذب ولو مازحاً", "b": 2.641, "f": 2.878}, {"a": "الصدق والأمانة", "t": "أداء الأمانة والمحافظة على ما يُؤتمن عليه", "b": 2.823, "f": 2.928}, {"a": "الصدق والأمانة", "t": "الوفاء بالوعد والالتزام بما يتعهّد به", "b": 2.785, "f": 2.912}, {"a": "السلوك في التعامل مع الآخرين", "t": "أدب الحديث واحترام الكبير والرفق بالصغير", "b": 2.74, "f": 2.928}, {"a": "السلوك في التعامل مع الآخرين", "t": "حسن التعامل مع الزملاء/الزميلات وترك الخصومة", "b": 2.74, "f": 2.945}, {"a": "السلوك في التعامل مع الآخرين", "t": "احترام المعلم/ة والالتزام بتوجيهاته", "b": 2.818, "f": 2.939}, {"a": "السلوك في التعامل مع الآخرين", "t": "المبادرة إلى نفع الآخرين ومساعدتهم", "b": 2.74, "f": 2.906}, {"a": "الانضباط وتحمّل المسؤولية", "t": "الانضباط في الحضور والالتزام بالوقت", "b": 2.591, "f": 2.856}, {"a": "الانضباط وتحمّل المسؤولية", "t": "الاعتذار عند الخطأ وتحمّل نتيجة التقصير", "b": 2.608, "f": 2.895}], "reasons": [{"t": "ضعف القدوة في محيط الطالب/ة", "p": 28}, {"t": "ضعف متابعة الأسرة وتعزيزها لما يتعلّمه", "p": 35}, {"t": "قِصَر وقت الحلقة وانشغالها بالحفظ عن الجانب التربوي", "p": 32}, {"t": "قلة البرامج والأنشطة التربوية المصاحبة", "p": 36}, {"t": "أثر الأصحاب ووسائل التواصل", "p": 47}, {"t": "كثرة غياب الطالب/ة عن الحلقة", "p": 39}], "general": [{"t": "هل لاحظتم تغيّراً إيجابياً في سلوك الابن/الابنة بعد الالتحاق بالحلقة؟", "p": 93}, {"t": "هل أصبح يبادر إلى الصلاة من غير تنبيه؟", "p": 90}, {"t": "هل تحسّن تعامله مع والديه وإخوته في البيت؟", "p": 96}, {"t": "هل ترغبون في استمراره بالحلقة العام القادم؟", "p": 96}], "stages": {"ثانوي": 50, "ابتدائي": 49, "جامعي فأعلى": 41, "متوسط": 28, "غير ذلك": 11}, "roles": {"ولي أمر الطالب/ة": 166, "معلم/ة الحلقة": 10, "مدير/ة المجمع": 5}, "axes": [{"name": "الصلاة والتعبّد", "b": 2.424, "f": 2.748}, {"name": "برّ الوالدين وصلة الرحم", "b": 2.711, "f": 2.88}, {"name": "الصدق والأمانة", "b": 2.75, "f": 2.906}, {"name": "السلوك في التعامل مع الآخرين", "b": 2.76, "f": 2.929}, {"name": "الانضباط وتحمّل المسؤولية", "b": 2.599, "f": 2.875}], "overall": {"b": 2.659, "f": 2.871, "d": 0.212, "pct": 8.0}}, "boys": {"n": 66, "items": [{"a": "الصلاة والتعبّد", "t": "المحافظة على الصلوات الخمس في أوقاتها", "b": 2.621, "f": 2.818}, {"a": "الصلاة والتعبّد", "t": "المبادرة إلى الصلاة دون تنبيه من أحد", "b": 2.303, "f": 2.667}, {"a": "الصلاة والتعبّد", "t": "المحافظة على الورد اليومي من القرآن والأذكار", "b": 2.227, "f": 2.621}, {"a": "برّ الوالدين وصلة الرحم", "t": "برّ الوالدين وطاعتهما في المعروف", "b": 2.788, "f": 2.939}, {"a": "برّ الوالدين وصلة الرحم", "t": "لين الحديث معهما وترك رفع الصوت والجدال", "b": 2.652, "f": 2.848}, {"a": "برّ الوالدين وصلة الرحم", "t": "الإحسان إلى الإخوة والأخوات وصلة الأرحام", "b": 2.758, "f": 2.894}, {"a": "الصدق والأمانة", "t": "الصدق في القول وترك الكذب ولو مازحاً", "b": 2.652, "f": 2.848}, {"a": "الصدق والأمانة", "t": "أداء الأمانة والمحافظة على ما يُؤتمن عليه", "b": 2.803, "f": 2.924}, {"a": "الصدق والأمانة", "t": "الوفاء بالوعد والالتزام بما يتعهّد به", "b": 2.788, "f": 2.909}, {"a": "السلوك في التعامل مع الآخرين", "t": "أدب الحديث واحترام الكبير والرفق بالصغير", "b": 2.742, "f": 2.924}, {"a": "السلوك في التعامل مع الآخرين", "t": "حسن التعامل مع الزملاء/الزميلات وترك الخصومة", "b": 2.712, "f": 2.939}, {"a": "السلوك في التعامل مع الآخرين", "t": "احترام المعلم/ة والالتزام بتوجيهاته", "b": 2.818, "f": 2.955}, {"a": "السلوك في التعامل مع الآخرين", "t": "المبادرة إلى نفع الآخرين ومساعدتهم", "b": 2.712, "f": 2.909}, {"a": "الانضباط وتحمّل المسؤولية", "t": "الانضباط في الحضور والالتزام بالوقت", "b": 2.652, "f": 2.864}, {"a": "الانضباط وتحمّل المسؤولية", "t": "الاعتذار عند الخطأ وتحمّل نتيجة التقصير", "b": 2.667, "f": 2.909}], "reasons": [{"t": "ضعف القدوة في محيط الطالب/ة", "p": 21}, {"t": "ضعف متابعة الأسرة وتعزيزها لما يتعلّمه", "p": 27}, {"t": "قِصَر وقت الحلقة وانشغالها بالحفظ عن الجانب التربوي", "p": 27}, {"t": "قلة البرامج والأنشطة التربوية المصاحبة", "p": 39}, {"t": "أثر الأصحاب ووسائل التواصل", "p": 32}, {"t": "كثرة غياب الطالب/ة عن الحلقة", "p": 29}], "general": [{"t": "هل لاحظتم تغيّراً إيجابياً في سلوك الابن/الابنة بعد الالتحاق بالحلقة؟", "p": 91}, {"t": "هل أصبح يبادر إلى الصلاة من غير تنبيه؟", "p": 89}, {"t": "هل تحسّن تعامله مع والديه وإخوته في البيت؟", "p": 97}, {"t": "هل ترغبون في استمراره بالحلقة العام القادم؟", "p": 95}], "stages": {"ابتدائي": 21, "متوسط": 21, "ثانوي": 16, "جامعي فأعلى": 5, "غير ذلك": 3}, "roles": {"ولي أمر الطالب/ة": 57, "مدير/ة المجمع": 5, "معلم/ة الحلقة": 4}, "axes": [{"name": "الصلاة والتعبّد", "b": 2.384, "f": 2.702}, {"name": "برّ الوالدين وصلة الرحم", "b": 2.733, "f": 2.894}, {"name": "الصدق والأمانة", "b": 2.748, "f": 2.894}, {"name": "السلوك في التعامل مع الآخرين", "b": 2.746, "f": 2.932}, {"name": "الانضباط وتحمّل المسؤولية", "b": 2.659, "f": 2.886}], "overall": {"b": 2.66, "f": 2.865, "d": 0.205, "pct": 7.7}}, "girls": {"n": 115, "items": [{"a": "الصلاة والتعبّد", "t": "المحافظة على الصلوات الخمس في أوقاتها", "b": 2.609, "f": 2.809}, {"a": "الصلاة والتعبّد", "t": "المبادرة إلى الصلاة دون تنبيه من أحد", "b": 2.53, "f": 2.783}, {"a": "الصلاة والتعبّد", "t": "المحافظة على الورد اليومي من القرآن والأذكار", "b": 2.2, "f": 2.73}, {"a": "برّ الوالدين وصلة الرحم", "t": "برّ الوالدين وطاعتهما في المعروف", "b": 2.774, "f": 2.896}, {"a": "برّ الوالدين وصلة الرحم", "t": "لين الحديث معهما وترك رفع الصوت والجدال", "b": 2.678, "f": 2.878}, {"a": "برّ الوالدين وصلة الرحم", "t": "الإحسان إلى الإخوة والأخوات وصلة الأرحام", "b": 2.643, "f": 2.843}, {"a": "الصدق والأمانة", "t": "الصدق في القول وترك الكذب ولو مازحاً", "b": 2.635, "f": 2.896}, {"a": "الصدق والأمانة", "t": "أداء الأمانة والمحافظة على ما يُؤتمن عليه", "b": 2.835, "f": 2.93}, {"a": "الصدق والأمانة", "t": "الوفاء بالوعد والالتزام بما يتعهّد به", "b": 2.783, "f": 2.913}, {"a": "السلوك في التعامل مع الآخرين", "t": "أدب الحديث واحترام الكبير والرفق بالصغير", "b": 2.739, "f": 2.93}, {"a": "السلوك في التعامل مع الآخرين", "t": "حسن التعامل مع الزملاء/الزميلات وترك الخصومة", "b": 2.757, "f": 2.948}, {"a": "السلوك في التعامل مع الآخرين", "t": "احترام المعلم/ة والالتزام بتوجيهاته", "b": 2.817, "f": 2.93}, {"a": "السلوك في التعامل مع الآخرين", "t": "المبادرة إلى نفع الآخرين ومساعدتهم", "b": 2.757, "f": 2.904}, {"a": "الانضباط وتحمّل المسؤولية", "t": "الانضباط في الحضور والالتزام بالوقت", "b": 2.557, "f": 2.852}, {"a": "الانضباط وتحمّل المسؤولية", "t": "الاعتذار عند الخطأ وتحمّل نتيجة التقصير", "b": 2.574, "f": 2.887}], "reasons": [{"t": "ضعف القدوة في محيط الطالب/ة", "p": 32}, {"t": "ضعف متابعة الأسرة وتعزيزها لما يتعلّمه", "p": 39}, {"t": "قِصَر وقت الحلقة وانشغالها بالحفظ عن الجانب التربوي", "p": 34}, {"t": "قلة البرامج والأنشطة التربوية المصاحبة", "p": 34}, {"t": "أثر الأصحاب ووسائل التواصل", "p": 55}, {"t": "كثرة غياب الطالب/ة عن الحلقة", "p": 45}], "general": [{"t": "هل لاحظتم تغيّراً إيجابياً في سلوك الابن/الابنة بعد الالتحاق بالحلقة؟", "p": 94}, {"t": "هل أصبح يبادر إلى الصلاة من غير تنبيه؟", "p": 90}, {"t": "هل تحسّن تعامله مع والديه وإخوته في البيت؟", "p": 95}, {"t": "هل ترغبون في استمراره بالحلقة العام القادم؟", "p": 97}], "stages": {"جامعي فأعلى": 36, "ثانوي": 34, "ابتدائي": 28, "غير ذلك": 8, "متوسط": 7}, "roles": {"ولي أمر الطالب/ة": 109, "معلم/ة الحلقة": 6}, "axes": [{"name": "الصلاة والتعبّد", "b": 2.446, "f": 2.774}, {"name": "برّ الوالدين وصلة الرحم", "b": 2.698, "f": 2.872}, {"name": "الصدق والأمانة", "b": 2.751, "f": 2.913}, {"name": "السلوك في التعامل مع الآخرين", "b": 2.768, "f": 2.928}, {"name": "الانضباط وتحمّل المسؤولية", "b": 2.566, "f": 2.869}], "overall": {"b": 2.659, "f": 2.875, "d": 0.216, "pct": 8.1}}, "quotes": [{"t": "كانت العلاقة بالابن سيئة وتعامله غير لائق مع والديه وإخوته… وبعد التحاقه بالحلقة احتواه الشيخ وعدّل سلوكياته وربطه بالحلقة والقرآن، ولله الحمد أصبح بارّاً بوالديه، محافظاً على صلاته، مهتمّاً بدراسته، محافظاً على ورده القرآني.", "g": "بنين"}, {"t": "يوماً من الأيام أفاقني من النوم للصلاة دون تنبيه أحد، وتكررت كثيراً، ورأيته أكثر من مرة يساعد الآخرين ويقضي حوائجهم.", "g": "بنين"}, {"t": "احترامه وتقديره لمن حوله، وتحسّن تعامله، وانطلاقته اجتماعياً مع الآخرين.", "g": "بنين"}, {"t": "كثرة النصيحة لأهلها، والبعد عن المجتمع الطالح، ومساعدة والدتها.", "g": "بنات"}, {"t": "المحافظة على الصلاة، ولبس أكثر احتشاماً.", "g": "بنات"}, {"t": "حسن التعامل والتعاون بين أفراد الدار، والمثابرة على حفظ القرآن الكريم.", "g": "بنات"}], "asks": ["إعادة الحلقة فترة صباحية", "فتح حلقات أخرى لاستيعاب الراغبين", "إطالة وقت الحلقة", "محاضرات دينية دورية وزيارات ميدانية بين الدور", "تحفيز الطلاب والطالبات بالجوائز", "تشجيع تطبيق القيم القرآنية في الحياة اليومية", "دروس تفقيهية لفهم الدين وتقوية الإيمان"]};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const MIN=1, MAX=3, pos = v => ((v-MIN)/(MAX-MIN))*100, f2 = v => v.toFixed(2);
+let KEY = 'all';
+const LABEL = {all:'جميع المشاركين', boys:'البنين', girls:'البنات'};
+
+function dumbbell(rows, big){
+  let h='';
+  rows.forEach(r=>{
+    const pb=pos(r.b), pa=pos(r.f), lo=Math.min(pb,pa), hi=Math.max(pb,pa), d=r.f-r.b;
+    const nm = r.name || r.t;
+    h += `<div class="row${big?' axisrow':''}" tabindex="0"
+        data-tip="${esc(nm)}|قبل ${f2(r.b)} · بعد ${f2(r.f)} · الفرق ${d>=0?'+':''}${f2(d)}">
+      <div class="rtop"><span class="nm">${esc(nm)}</span>
+        <span class="dl">${d>=0?'+':''}${f2(d)}</span></div>
+      <div class="plot"><span class="track"></span>
+        <span class="seg" style="left:${lo}%; width:${hi-lo}%"></span>
+        <span class="mk b" style="left:${pb}%"></span>
+        <span class="mk a" style="left:${pa}%"></span>
+        <span class="vlab" style="left:${pb}%">${f2(r.b)}</span>
+        <span class="vlab" style="left:${pa}%; top:25px">${f2(r.f)}</span>
+      </div></div>`;
+  });
+  return h;
+}
+const AXISLINE = `<div class="axisline"><span style="left:0%">١ ضعيف</span>
+  <span style="left:50%">٢ متوسط</span><span style="left:100%">٣ جيد</span></div>`;
+
+function table(rows, head){
+  return `<table><thead><tr><th>${head}</th><th>قبل</th><th>بعد</th><th>الفرق</th></tr></thead><tbody>` +
+    rows.map(r=>`<tr><td>${esc(r.name||r.t)}</td><td class="num">${f2(r.b)}</td>
+      <td class="num">${f2(r.f)}</td>
+      <td class="num">${r.f-r.b>=0?'+':''}${f2(r.f-r.b)}</td></tr>`).join('') + '</tbody></table>';
+}
+
+function render(){
+  const P = D[KEY];
+  const o = P.overall;
+  document.getElementById('bigNum').innerHTML = `+${o.pct.toFixed(1)}<sup>%</sup>`;
+  document.getElementById('bigCap').textContent =
+    `ارتفاع في المتوسط العام للقيم بعد الالتحاق بالحلقة — ${LABEL[KEY]}`;
+  document.getElementById('pinB').textContent = f2(o.b);
+  document.getElementById('pinA').textContent = f2(o.f);
+
+  const yes = P.general[3].p, change = P.general[0].p;
+  document.getElementById('stats').innerHTML = [
+    [P.n, 'رداً على الاستبانة'],
+    [yes+'٪', 'يرغبون في استمرار الابن/الابنة بالحلقة'],
+    [change+'٪', 'لاحظوا تغيّراً إيجابياً في السلوك'],
+    [15, 'عبارة قيمية مقيسة قبل وبعد'],
+  ].map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
+
+  const axSorted = P.axes.slice().sort((a,b)=>(b.f-b.b)-(a.f-a.b));
+  document.getElementById('axNote').textContent =
+    `أكبر أثر للحلقة ظهر في ${axSorted[0].name}، ثم في ${axSorted[1].name}.`;
+  document.getElementById('axesPlot').innerHTML = dumbbell(P.axes, true) + AXISLINE;
+  document.getElementById('axesTable').innerHTML = table(P.axes, 'المحور');
+
+  const itSorted = P.items.slice().sort((a,b)=>(b.f-b.b)-(a.f-a.b));
+  document.getElementById('itNote').textContent =
+    `أعلى تحسّن كان في «${itSorted[0].t}»، وارتفع متوسطها من ${f2(itSorted[0].b)} إلى ${f2(itSorted[0].f)}.`;
+  let ih='', cur='';
+  P.items.forEach(it=>{
+    if(it.a!==cur){ cur=it.a; ih += `<div class="grp"><span>${esc(cur)}</span><i></i></div>`; }
+    ih += dumbbell([it], false);
+  });
+  document.getElementById('itemsPlot').innerHTML = ih + AXISLINE;
+  document.getElementById('itemsTable').innerHTML = table(P.items, 'العبارة');
+
+  document.getElementById('genPlot').innerHTML = P.general.map(g=>
+    `<div class="pbar q" tabindex="0" data-tip="${esc(g.t)}|${g.p}٪ أجابوا بنعم — ${LABEL[KEY]}">
+      <span class="nm">${esc(g.t)}</span>
+      <span class="t"><i style="width:${g.p}%"></i></span><b>${g.p}٪</b></div>`).join('');
+
+  const rsSorted = P.reasons.slice().sort((a,b)=>b.p-a.p);
+  document.getElementById('rsNote').textContent =
+    `أبرز ما يراه المشاركون عائقاً: ${rsSorted[0].t} (${rsSorted[0].p}٪)، ثم ${rsSorted[1].t} (${rsSorted[1].p}٪).`;
+  document.getElementById('reasonsPlot').innerHTML = P.reasons.map(r=>
+    `<div class="pbar" tabindex="0" data-tip="${esc(r.t)}|${r.p}٪ موافقون — ${LABEL[KEY]}">
+      <span class="nm">${esc(r.t)}</span>
+      <span class="t"><i style="width:${r.p}%"></i></span><b>${r.p}٪</b></div>`).join('');
+
+  const st = Object.entries(P.stages).sort((a,b)=>b[1]-a[1]);
+  document.getElementById('sample').innerHTML =
+    Object.entries(P.roles).map(([k,v])=>`<span class="chip">${esc(k)} <b>${v}</b></span>`).join('') +
+    st.map(([k,v])=>`<span class="chip">${esc(k)} <b>${v}</b></span>`).join('');
+
+  document.getElementById('quotes').innerHTML = D.quotes
+    .filter(q => KEY==='all' || q.g===(KEY==='boys'?'بنين':'بنات'))
+    .map(q=>`<figure class="q"><p>${esc(q.t)}</p><small>${esc(q.g)}</small></figure>`).join('');
+
+  const g = P.general, ax = P.axes;
+  const worst = P.items.slice().sort((a,b)=>a.f-b.f)[0];
+  document.getElementById('take').innerHTML = [
+    `الأثر الأوضح في العبادة: محور ${axSorted[0].name} ارتفع من ${f2(axSorted[0].b)} إلى ${f2(axSorted[0].f)}، وهو أكبر قفزة بين المحاور.`,
+    `أعلى بند تحسّناً: «${itSorted[0].t}» (${itSorted[0].f-itSorted[0].b>=0?'+':''}${f2(itSorted[0].f-itSorted[0].b)}).`,
+    `القيم الأسرية والخُلُقية كانت مرتفعة أصلاً قبل الالتحاق، فجاء أثر الحلقة فيها تثبيتاً وزيادة لا تأسيساً.`,
+    `أدنى البنود بعد الالتحاق: «${worst.t}» (${f2(worst.f)})، وهي أولى بالعناية في الخطة القادمة.`,
+    `${g[3].p}٪ يرغبون في الاستمرار العام القادم، و${g[2].p}٪ لمسوا تحسّناً في التعامل داخل البيت.`,
+    `أبرز العوائق خارج الحلقة: ${rsSorted[0].t} و${rsSorted[1].t} — وكلاهما يعالَج بالشراكة مع الأسرة.`
+  ].map(t=>`<div><i></i><span>${esc(t)}</span></div>`).join('');
+}
+
+/* مقارنة البنين والبنات — ثابتة لا تتبع المبدّل */
+(function cmp(){
+  const B=D.boys.axes, G=D.girls.axes;
+  document.getElementById('cmpPlot').innerHTML = B.map((b,i)=>{
+    const g=G[i];
+    return `<div class="twobar" tabindex="0"
+      data-tip="${esc(b.name)}|بنين ${f2(b.f)} · بنات ${f2(g.f)}">
+      <span class="nm">${esc(b.name)}</span>
+      <span class="tracks">
+        <span class="trk bo"><em>بنين</em><span class="t"><i style="width:${(b.f/3*100).toFixed(1)}%"></i></span><b>${f2(b.f)}</b></span>
+        <span class="trk gi"><em>بنات</em><span class="t"><i style="width:${(g.f/3*100).toFixed(1)}%"></i></span><b>${f2(g.f)}</b></span>
+      </span></div>`;
+  }).join('');
+})();
+
+document.getElementById('asks').innerHTML = D.asks.map(a=>`<span class="chip">${esc(a)}</span>`).join('');
+
+document.querySelectorAll('.switch button').forEach(b=>b.addEventListener('click',()=>{
+  KEY=b.dataset.k;
+  document.querySelectorAll('.switch button').forEach(x=>x.setAttribute('aria-pressed', String(x===b)));
+  document.querySelectorAll('.tw').forEach(t=>{t.hidden=true});
+  document.querySelectorAll('.tbtn').forEach(t=>{t.textContent='عرض الأرقام جدولاً'});
+  render();
+}));
+document.querySelectorAll('.tbtn').forEach(b=>b.addEventListener('click',()=>{
+  const el=document.getElementById(b.dataset.t);
+  el.hidden=!el.hidden;
+  b.textContent = el.hidden ? 'عرض الأرقام جدولاً' : 'إخفاء الجدول';
+}));
+
+const tip=document.getElementById('tip');
+function show(e,el){
+  const d=(el.dataset.tip||'').split('|');
+  if(!d[0]) return;
+  tip.innerHTML = `${esc(d[0])}<br><b>${esc(d[1]||'')}</b>`;
+  tip.style.opacity='1';
+  const r=el.getBoundingClientRect();
+  const x=(e&&e.clientX)?e.clientX:r.left+r.width/2, y=r.top;
+  const w=tip.offsetWidth, h=tip.offsetHeight;
+  tip.style.left = Math.max(8, Math.min(window.innerWidth-w-8, x-w/2))+'px';
+  tip.style.top = (y-h-10<8 ? r.bottom+10 : y-h-10)+'px';
+}
+const hide=()=>{tip.style.opacity='0'};
+document.addEventListener('pointermove',e=>{const el=e.target.closest('[data-tip]'); el?show(e,el):hide()});
+document.addEventListener('focusin',e=>{const el=e.target.closest('[data-tip]'); el?show(null,el):hide()});
+document.addEventListener('focusout',hide);
+document.addEventListener('scroll',hide,{passive:true});
+
+render();
+</script>
+</body>
+</html>
